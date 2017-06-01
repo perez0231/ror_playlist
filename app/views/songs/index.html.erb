@@ -1,0 +1,33 @@
+<h1>Spot-aFly</h1>
+<h3>  <a href="/users/<%= @user.id%> "><%= @user.fname%> <%= @user.lname%></a> ', User Page</h3>
+
+<p>All songs in our Hub</p>
+<table>
+  <tr>
+    <td>Artist</td>
+    <td> Title</td>
+    <td>No. of Times Song Added</td>
+    <td>Action</td>
+  </tr>
+  <%@songs.each do |song|%>
+<tr>
+  <td><%= song.artist%></td>
+  <td> <a href="/songs/<%= song.id%>"><%= song.title%></a>  </td>
+  <td> <%= song.times_added%></td>
+  <td><form class="" action="/songs/<%=song.id%>/add" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="submit" name="" value="Add Song">
+
+  </form></td>
+</tr>
+<%end%>
+
+</table>
+<h3>Add a Song:</h3>
+<form action="/songs" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  Artist:<input type="text" name="artist">
+  Song: <input type="text" name="title">
+  <input type="submit" name="" value="Add Song">
+
+</form>

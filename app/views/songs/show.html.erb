@@ -1,0 +1,12 @@
+<a href="/songs/index">Dashboard</a>
+
+
+<h1>Others Who added: <%= @song.artist %> - <%= @song.title %></h1>
+
+
+  <%@playlist.each do |playlist|%>
+
+  <p><a href="/users/<%= playlist.user.id%>"><%= playlist.user.fname%></a>  <%= playlist.user_added%></p>
+
+
+  <%end%>

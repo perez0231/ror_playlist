@@ -1,0 +1,47 @@
+<h1>Users#index</h1>
+<p>Find me in app/views/users/index.html.erb</p>
+
+
+
+<header>
+  <h1> Welcome to LinkedOut!</h1>
+  <h4>Login or register a new account below </h4>
+</header>
+
+<div class="wrapper">
+
+<div class="registration " style="display:inline-block; vertical-align: top; padding:10px; width: 500px;">
+  <h2>Registration</h2>
+  <form  action="/users" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      First Name: <input type="text" name="fname" placeholder="First Name"><br>
+      Last  Name: <input type="text" name="lname" placeholder="Last Name"><br>
+      Email: <input type="text" name="email" placeholder="email"> <br>
+      Password:<input type="password" name="password" placeholder="password">
+      <br>
+      Confirm Password:<input type="password" name="password_confirmation" placeholder="password">
+      <br>
+
+      <button class="btn waves-effect waves-light teal" type="submit">Register User</button>
+  </form>
+</div>
+
+
+
+
+<div class="login" style=" margin-left: 60px; display:inline-block; vertical-align: top; width: 300px;">
+
+  <h1>Log in</h1>
+  <form class="" action="/users/new" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    Email: <input type="text" name="email" placeholder="email">
+    <br>
+    Password:<input type="password" name="password" placeholder="password">
+    <br>
+      <button class="btn waves-effect waves-light teal" type="submit">Login</button>
+  </form>
+
+</div>
+
+
+</div>
